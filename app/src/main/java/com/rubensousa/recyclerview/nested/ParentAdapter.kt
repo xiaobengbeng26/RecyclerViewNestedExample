@@ -103,6 +103,8 @@ class ParentAdapter(private val scrollStateHolder: ScrollStateHolder) :
          * the view will be detached and won't be snapped correctly
          *
          * To fix that, we snap again without smooth scrolling.
+         *
+         * fixme 修复 子view滚动中，嵌套父view快速滚动，此时再次回到子view，其状态未对其
          */
         fun onDetachedFromWindow() {
             if (recyclerView.scrollState != RecyclerView.SCROLL_STATE_IDLE) {

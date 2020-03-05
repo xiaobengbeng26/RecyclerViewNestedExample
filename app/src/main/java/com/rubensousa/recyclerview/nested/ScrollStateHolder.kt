@@ -45,6 +45,7 @@ class ScrollStateHolder(savedInstanceState: Bundle? = null) {
 
     /**
      * Persists the [RecyclerView.LayoutManager] states
+     * fixme 修复滚动状态无法保存(子view滑动，嵌套父view滚动后，子view状态消失)
      */
     private val scrollStates = hashMapOf<String, Parcelable>()
 
@@ -98,6 +99,7 @@ class ScrollStateHolder(savedInstanceState: Bundle? = null) {
 
     /**
      * Saves this RecyclerView layout state for a given key
+     * fixme
      */
     fun saveScrollState(
         recyclerView: RecyclerView,
@@ -114,6 +116,7 @@ class ScrollStateHolder(savedInstanceState: Bundle? = null) {
 
     /**
      * Restores this RecyclerView layout state for a given key
+     * fixme
      */
     fun restoreScrollState(
         recyclerView: RecyclerView,
